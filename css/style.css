@@ -89,8 +89,8 @@ nav a.active {
 }
 
 .main-content{
-  display: flex;
-  justify-content: space-between;
+  flex: 1;
+  padding: 45px;
 }
 
 .topbar{
