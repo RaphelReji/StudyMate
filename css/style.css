@@ -139,3 +139,33 @@ nav a.active {
 .section-heading{
   margin-bottom: 20px;
 }
+
+.timetable-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.day-card{
+  background-color: #fffaf4;
+  border: 1px solid #d9c8b8;
+  padding: 18px;
+  min-height: 150px;
+}
+
+.day-card h3{
+  color: #526b52;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6d9cc;
+}
+
+.subject-item{
+  background-color: #e9eee3;
+  color: #526b52;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
