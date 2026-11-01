@@ -2,6 +2,17 @@ const dateElement = document.getElementById("todayDate");
 
 const today = new Date();
 
+const greeting = document.getElementById("greeting");
+const currentHour = today.getHours();
+
+if (currentHour < 12){
+  greeting.textContent = "Good morning";
+} else if ( currentHour < 17){
+  greeting.textContent= "Good afternoon"
+} else{
+  greeting.textContent = "Good Evening";
+}
+
 const formattedDate = today.toLocaleDateString("en-IN",{
   weekday:"long",
   day:"numeric",
@@ -49,6 +60,14 @@ const timetableGrid = document.getElementById("timetableGrid");
 
     const dayCard = document.createElement("div");
     dayCard.className = "day-card";
+
+    const todayName = today.toLocaleDateString("en-US", {
+        weekday:"long"
+    });
+
+    if (day.day === todayName){
+      dayCard.classList.add("today-card")
+    }
 
     const dayTitle = document.createElement("h3")
     dayTitle.textContent = day.day;

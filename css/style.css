@@ -190,6 +190,20 @@ nav a.active {
   background-color: #f3e9df;
 }
 
+.today-card{
+  border: 2px solid #829876;
+  background-color: #f1f4eb;
+}
+
+.today-card h3::after{
+  content: "Today";
+  font-size: 10px;
+  font-weight: normal;
+  background-color: #dce5d5;
+  padding: 4px 7px;
+  border-radius: 3px;
+}
+
 
 
 
