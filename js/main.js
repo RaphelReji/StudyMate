@@ -65,5 +65,26 @@ const timetableGrid = document.getElementById("timetableGrid");
 
     });
 
+    const addButton = document.createElement("button");
+    addButton.textContent = "+Add subject";
+    addButton.className = "add-subject-button";
+
+    addButton.addEventListener("click",function(){
+      const subjectName = prompt("Enter a subject:");
+
+      if (subjectName && subjectName.trim() !== ""){
+        const newSubject = document.createElement("div");
+
+        newSubject.className = "subject-item";
+        newSubject.textContent = subjectName.trim();
+
+        day.subjects.push(subjectName.trim());
+
+        dayCard.insertBefore(newSubject, addButton);
+      }
+    });
+
+    dayCard.appendChild(addButton)
+
     timetableGrid.appendChild(dayCard);
   });

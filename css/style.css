@@ -169,3 +169,19 @@ nav a.active {
   border-radius: 4px;
   font-size: 14px;
 }
+
+
+.add-subject-button{
+  background-color: transparent;
+  border: 1px solid #b9aa98;
+  color: #806e5b;
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.add-subject-button:hover{
+  background-color: #f3e9df;
+}
