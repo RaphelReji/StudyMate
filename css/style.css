@@ -91,20 +91,25 @@ nav a.active {
 .main-content{
   flex: 1;
   padding: 45px;
+  max-width: 1400px;
 }
 
 .topbar{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
 }
 
 .topbar h1{
   font-size: 32px;
+  color: #526b52;
   margin-bottom: 8px;
 }
 
 .subtitle{
   color: #947d68;
+  font-size: 14px;
 }
 
 .date-box{
@@ -202,6 +207,7 @@ nav a.active {
   background-color: #dce5d5;
   padding: 4px 7px;
   border-radius: 3px;
+  margin: 10px;
 }
 
 
