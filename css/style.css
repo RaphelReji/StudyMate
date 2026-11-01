@@ -210,7 +210,32 @@ nav a.active {
   margin: 10px;
 }
 
+.calendar-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
+.calendar-box{
+  background-color: #fffaf4;
+  border: 1px solid #d9c8b8;
+  border-radius: 6px;
+  padding: 22px;
+}
+
+.calendar-header{
+  margin-bottom: 20px;
+}
+
+.calendar-header h3{
+  color: #526b52;
+  font-size: 20px;
+}
+
+.calendar-grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
 
 
 

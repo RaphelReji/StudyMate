@@ -107,3 +107,15 @@ const timetableGrid = document.getElementById("timetableGrid");
 
     timetableGrid.appendChild(dayCard);
   });
+
+
+  //calender code
+
+  const calendarMonth = document.getElementById("calenderMonth");
+  const calendarGrid = document.getElementById("calendarGrid");
+
+  const currentYear = today.getFullYear();
+  const currentMonth = today.getMonth();
+
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const lastDay = new Date(currentYear, currentMonth +1, 0)
