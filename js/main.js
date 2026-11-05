@@ -109,7 +109,73 @@ const timetableGrid = document.getElementById("timetableGrid");
   });
 
 
-  const todoInput = document.getElementById("todoInput");
-  const addTodoButton = document.getElementById("addTodoButton");
-  const taskList = document.getElementById("taskList");
-  const taskCount = document.getElementById("taskCount")
+const todoInput = document.getElementById("todoInput");
+const addTodoButton = document.getElementById("addTodoButton");
+const taskList = document.getElementById("taskList");
+const taskCount = document.getElementById("taskCount");
+
+function updateTaskCount() {
+
+    const checkboxes = document.querySelectorAll(".task-checkbox");
+
+    let completed = 0;
+
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            completed++;
+        }
+    });
+
+    taskCount.textContent =
+        completed + " of " + checkboxes.length + " completed";
+}
+
+  function addTodo(){
+      const taskName = todoInput.value.trim();
+
+          if (taskName === "") {
+              return;
+          }
+  
+
+  const taskItem = document.createElement("label");
+  taskItem.className = "task-item";
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "task-checkbox";
+
+  const taskText = document.createElement("span");
+  taskText.textContent = taskName;
+
+  const deleteButton = document.createElement("button");
+  deleteButton.type = "button";
+  deleteButton.textContent ="Delete";
+
+  deleteButton.addEventListener("click", function(){
+    taskItem.remove();
+    updateTaskCount();
+  })
+
+
+  taskItem.appendChild(checkbox);
+  taskItem.appendChild(taskText)
+  taskItem.appendChild(deleteButton)
+
+  taskList.appendChild(taskItem);
+
+  todoInput.value = "";
+  updateTaskCount();
+}
+
+  addTodoButton.addEventListener("click", addTodo);
+
+  todoInput.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+      addTodo();
+    }
+  });
+
+  taskList.addEventListener("change", updateTaskCount);
+
+  updateTaskCount();
