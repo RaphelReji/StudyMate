@@ -107,3 +107,9 @@ const timetableGrid = document.getElementById("timetableGrid");
 
     timetableGrid.appendChild(dayCard);
   });
+
+
+  const todoInput = document.getElementById("todoInput");
+  const addTodoButton = document.getElementById("addTodoButton");
+  const taskList = document.getElementById("taskList");
+  const taskCount = document.getElementById("taskCount")

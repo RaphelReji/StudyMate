@@ -238,6 +238,15 @@ nav a.active {
   grid-template-columns: repeat(4,minmax(0, 1fr));
 }
 
+.task-item button{
+  margin-left: auto;
+  padding: 5px 9px;
+  background: transparent;
+  color: #947d68;
+  border: 1px solid #d9c8b8;
+  font-size: 12px;
+}
+
 
 
 
