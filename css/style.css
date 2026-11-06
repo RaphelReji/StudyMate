@@ -247,9 +247,55 @@ nav a.active {
   font-size: 12px;
 }
 
+.todo-input-area{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.todo-input-area input{
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d9c8b8;
+  background-color: #fffaf4;
+  color: #514638;
+  font-size: 13px;
+  outline: none;
+}
+
+.todo-input-area input:focus{
+  border-color: #829876;
+}
 
 
+.todo-input-area button{
+  padding: 10px 16px;
+  background-color: #526b52;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
+.todo-input-area button:hover{
+  background-color: #405640;
+}
+
+.task-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-item{
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.tasks-section{
+  border: 1px solid #405640;
+  padding: 20px;
+}
 
 
 

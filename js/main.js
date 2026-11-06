@@ -26,31 +26,31 @@ dateElement.textContent = formattedDate;
 const timetable =[
   {
     day:"Monday",
-    subjects:["Maths", "English", "Physics"]
+    subjects:[]
   },
     {
     day:"Tuesday",
-    subjects:["Chemistry", "English", "Physics"]
+    subjects:[]
   },
     {
     day:"Wednesday",
-    subjects:["Biology", "English", "Physics"]
+    subjects:[]
   },
     {
     day:"Thursday",
-    subjects:["Computer Science", "English", "Physics"]
+    subjects:[]
   },
     {
     day:"Friday",
-    subjects:["Chemistry", "English", "Physics"]
+    subjects:[]
   },
     {
     day:"Saturday",
-    subjects:["Maths", "English", "Physics"]
+    subjects:[]
   },
     {
     day:"Sunday",
-    subjects:["Revision", "English", "Physics"]
+    subjects:[]
   }
 ]
 
