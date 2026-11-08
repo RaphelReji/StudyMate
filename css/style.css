@@ -1,13 +1,20 @@
+:root {
+    --tea-green: #ccd5ae;
+    --beige: #e9edc9;
+    --cornsilk: #fefae0;
+    --papaya-whip: #faedcd;
+    --light-bronze: #d4a373;
+}
+
 *{
   box-sizing: border-box;
 }
 
 body{
   margin: 0;
-  background-color: #f3e9df;
+  background-color: var(--papaya-whip);
   font-family: Arial,sans-serif;
   text-align: center;
-  padding-top: 100px;
   color: #514638;
 }
 
@@ -20,7 +27,7 @@ p{
 }
 
 button{
-  background-color: #526b52;
+  background-color: var(--tea-green);
   color: white;
   padding: 12px 24px;
   border: none;
@@ -36,7 +43,7 @@ button{
 .sidebar{
   width: 240px;
   flex-shrink: 0;
-  background-color: #eee2d6;
+  background-color: var(--tea-green);
   padding: 30px 22px;
   border-right: 1px solid #d9c8b8;
   display: flex;
@@ -44,7 +51,7 @@ button{
 }
 
 .logo{
-  color: #526b52;
+  color: #495a49;
   font-size: 27px;
   margin-bottom: 55px;
 }
@@ -124,7 +131,7 @@ nav a.active {
   background:transparent;
   border: none;
   padding: 10px 0;
-  margin-bottom: 25pxpx;
+  margin-bottom: 25px;
 }
 
 .welcome-box h2{
@@ -223,7 +230,7 @@ nav a.active {
 .book-page{
   min-width: 0;
   padding: 30px;
-  background-color: #fffaf1;
+  background-color: var(--cornsilk);
 }
 
 .left-page{
@@ -231,7 +238,7 @@ nav a.active {
 }
 
 .right-page{
-  background-color: #fcf7ed;
+  background-color:var(--cornsilk);
 }
 
 .right-page .timetable-grid{
@@ -245,8 +252,12 @@ nav a.active {
   color: #947d68;
   border: 1px solid #d9c8b8;
   font-size: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
 }
-
+.task-item button:hover{
+  background-color: var(--papaya-whip);
+}
 .todo-input-area{
   display: flex;
   gap: 8px;
@@ -288,8 +299,24 @@ nav a.active {
 }
 
 .task-item{
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;
-  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--beige);
+  border-bottom: 1px solid #d9c8b8;
+  text-align: left;
+}
+.task-item span{
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.task-checkbox{
+  accent-color: #526b52;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .tasks-section{
