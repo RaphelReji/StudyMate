@@ -41,13 +41,20 @@ button{
 
 
 .sidebar{
-  width: 240px;
-  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  z-index: 100;
   background-color: var(--tea-green);
   padding: 30px 22px;
   border-right: 1px solid #d9c8b8;
   display: flex;
   flex-direction: column;
+
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
 }
 
 .logo{
@@ -70,19 +77,7 @@ nav {
   gap:9px;
 }
 
-nav a{
-  text-decoration: none;
-  color: #705b4b;
-  padding: 13px;
-  border-radius: 5px;
-  font-size: 14px;
-}
 
-nav a:hover,
-nav a.active {
-  background-color: #dce5d5;
-  color: #526b52;
-}
 
 .sidebar-bottom{
   margin-top: auto;
@@ -382,8 +377,46 @@ nav a.active {
 
 
 
+.sidebar.open{
+  transform: translateX(0);
+}
+
+.sidebar-nav{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #705b4b;
+  padding: 13px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+.nav-link:hover,
+.nav-link.active{
+  background-color: var(--papaya-whip);
+  color: #405640;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 35, 28, 0.25);
+    z-index: 90;
+    display: none;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
 
 
 

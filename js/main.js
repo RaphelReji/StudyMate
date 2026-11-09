@@ -179,3 +179,23 @@ function updateTaskCount() {
   taskList.addEventListener("change", updateTaskCount);
 
   updateTaskCount();
+
+
+
+
+  const menuToggle = document.getElementById("menuToggle");
+  const sidebar = document.getElementById("sidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay")
+
+  const navLinks = document.querySelectorAll(".nav-link");
+
+
+  menuToggle.addEventListener("click", function(){
+    sidebar.classList.toggle("open");
+    sidebarOverlay.classList.toggle("active");
+  });
+
+  sidebarOverlay.addEventListener("click", function() {
+    sidebar.classList.remove("open");
+    sidebarOverlay.classList.remove("active");
+});
