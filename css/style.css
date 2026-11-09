@@ -325,6 +325,61 @@ nav a.active {
 }
 
 
+/*timer*/
+
+
+.focus-section{
+  margin-top: 25px;
+  padding: 22px;
+  background-color: var(--beige);
+  border: 1px solid #d9c8b8;
+  text-align: center;
+}
+
+.focus-section h2{
+  color: #526b52;
+  margin-bottom: 8px;
+}
+
+.timer-display{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 48px;
+  color: #526b52;
+  margin: 20px 0 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+
+#timerStatus {
+    font-size: 13px;
+    color: #705b4b;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.timer-controls button {
+    padding: 10px 16px;
+    font-size: 13px;
+}
+
+#pauseTimer,
+#resetTimer {
+    background-color: transparent;
+    color: #526b52;
+    border: 1px solid #829876;
+}
+
+#pauseTimer:hover,
+#resetTimer:hover {
+    background-color: var(--papaya-whip);
+}
+
 
 
 
