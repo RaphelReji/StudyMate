@@ -56,7 +56,9 @@ const timetable =[
 
 const timetableGrid = document.getElementById("timetableGrid");
 
-  timetable.forEach(function(day){
+if (timetableGrid){
+
+    timetable.forEach(function(day){
 
     const dayCard = document.createElement("div");
     dayCard.className = "day-card";
@@ -107,6 +109,7 @@ const timetableGrid = document.getElementById("timetableGrid");
 
     timetableGrid.appendChild(dayCard);
   });
+}
 
 
 const todoInput = document.getElementById("todoInput");
@@ -114,6 +117,9 @@ const addTodoButton = document.getElementById("addTodoButton");
 const taskList = document.getElementById("taskList");
 const taskCount = document.getElementById("taskCount");
 
+
+if (todoInput && addTodoButton && taskList && taskCount){
+  
 function updateTaskCount() {
 
     const checkboxes = document.querySelectorAll(".task-checkbox");
@@ -179,6 +185,7 @@ function updateTaskCount() {
   taskList.addEventListener("change", updateTaskCount);
 
   updateTaskCount();
+}
 
 
 
@@ -187,10 +194,10 @@ function updateTaskCount() {
   const sidebar = document.getElementById("sidebar");
   const sidebarOverlay = document.getElementById("sidebarOverlay")
 
-  const navLinks = document.querySelectorAll(".nav-link");
 
+if (menuToggle && sidebar && sidebarOverlay){
 
-  menuToggle.addEventListener("click", function(){
+    menuToggle.addEventListener("click", function(){
     sidebar.classList.toggle("open");
     sidebarOverlay.classList.toggle("active");
   });
@@ -199,3 +206,5 @@ function updateTaskCount() {
     sidebar.classList.remove("open");
     sidebarOverlay.classList.remove("active");
 });
+
+}
