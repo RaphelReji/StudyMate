@@ -1,9 +1,15 @@
+
 :root {
     --tea-green: #ccd5ae;
     --beige: #e9edc9;
     --cornsilk: #fefae0;
     --papaya-whip: #faedcd;
     --light-bronze: #d4a373;
+
+
+     --font-display: "Fraunces", serif;
+    --font-body: "Nunito Sans", sans-serif;
+    --font-pixel: "Tiny5", sans-serif;
 }
 
 *{
@@ -13,9 +19,12 @@
 body{
   margin: 0;
   background-color: var(--papaya-whip);
-  font-family: Arial,sans-serif;
+  font-family:var(--font-body);
   text-align: center;
   color: #514638;
+}
+h1, h2, h3 {
+    font-family: var(--font-display);
 }
 
 h1{
