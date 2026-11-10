@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyMate Notes</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito+Sans:wght@400;500;600;700&family=Tiny5&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <h2 class="logo">StudyMate</h2>
+        <p class="menu-title">YOUR SPACE</p>
+
+        <nav class="side-nav">
+          <a href="index.html" class="nav-link" data-page="homePage"><span>H</span>Home</a>
+        </nav>
+
+         <nav class="side-nav">
+          <a href="timer.html" class="nav-link" data-page="focusPage"><span>H</span>Focus</a>
+        </nav>
+
+         <nav class="side-nav">
+          <a href="notes.html" class="nav-link active" data-page="notesPage"><span>H</span>Notes</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <p>Start now!</p>
+          <span>made with love </span>
+        </div>
+
+      </aside>
+
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <main class="main-content">
+
+        <header class="topbar">
+
+          <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle"> ☰</button>
+          </div>
+
+          <div>
+            <p class="small-heading">YOUR PERSONAL STUDY SPACE</p>
+            <h1 id="greeting">Good Morning!</h1>
+            <p class="subtitle">Let's make today productive</p>
+          </div>
+
+          <div class="date-box">
+            <p id="todayDate">Loading date...</p>
+          </div>
+
+        </header>
+
+<section class="notes-page">
+
+       <div class="notes-heading">
+          <p class="small-heading">Your NOTEBOOK</p>
+          <h2>Notes</h2>
+          <p>Write anything.</p>
+        </div>
+
+      <div class="note-editor">
+        <input type="text" id="noteTitle" placeholder="Title for your note...">
+
+        <textarea id="noteContent" placeholder="Write your crazy ideas!" rows="7"></textarea>
+
+        <div class="note-editor-actions">
+          <button id="saveNoteButton">Save</button>
+          <button id="cancelEditButton" type="button" hidden>Cancel</button>
+        </div>
+
+      </div>    
+
+</section>
+
+
+
+
+
+
+      </main>
+  </div>
+    
+  <script src="js/main.js"></script>  
+</body>
+</html>
