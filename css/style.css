@@ -439,6 +439,81 @@ nav {
 }
 
 
+/*notes page*/
+
+.notes-page{
+  max-width: 1100px;
+  margin: 30x auto;
+}
+.notes-heading{
+  margin-bottom: 25px;
+}
+
+.notes-heading h2{
+  color: #526b52;
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+.notes-heading >p:last-child{
+  font-size: 14px;
+}
+
+.note-editor{
+  background: var(--cornsilk);
+  border: 1px solid #d9c8b8;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(81, 70, 56, 0.05);
+}
+
+.note-editor input,
+.note-editor textarea{
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  background: #fffaf4;
+  border: 1px solid #d9c8b8;
+  color: #514638;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+}
+
+
+.note-editor input:focus,
+.note-editor textarea:focus {
+    border-color: #829876;
+}
+
+
+.note-editor textarea{
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.note-editor-actions{
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+
+.note-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.note-card{
+  background: var(--cornsilk);
+  border: 1px solid #d9c8b8;
+  padding: 20px;
+  text-align: left;
+  min-width: 0;
+}
+
 
 
 
