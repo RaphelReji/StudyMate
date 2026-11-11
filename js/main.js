@@ -219,6 +219,9 @@ const resetTimer = document.getElementById("resetTimer");
 const timerStatus = document.getElementById("timerStatus");
 
 
+let timeLeft = 25 * 60;
+let  timerInterval = null;
+
 // display of time
 
 function updateTimerDisplay() {

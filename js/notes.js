@@ -34,6 +34,76 @@ function renderNotes(){
     const title = document.createElement("h3");
     title.textContent = note.title;
 
+    const content = document.createElement("p");
+    content.textContent = note.content;
 
-  })
+    const actions = document.createElement('div');
+    actions.className = "notes-card-actions";
+
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.className = "note-edit-button";
+
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "note-delete-button";
+
+
+    editButton.addEventListener('click', function(){
+
+      noteTitle.value = note.title;
+      noteContent.value = note.content;
+
+      editingNoteld = note.id;
+
+      saveNoteButton.textContent = "Update";
+      cancelEditButton.hidden = false;
+      editorLabel.textContent = "Edit";
+
+      noteTitle.focus();
+    });
+
+
+    // deleting note
+
+
+    deleteButton.addEventListener("click", function(){
+
+      notes = notes.filter(function(item){
+        return item.id!== note.id;
+      });
+
+      saveNotes();
+      renderNotes();
+
+      if (editingNotel === note.id){
+        clearEditor();
+      }
+
+    });
+
+    actions.appendChild(editButton)
+    actions.appendChild(deleteButton)
+
+
+    noteCard.appendChild(title)
+
+    noteCard.appendChild(content)
+
+    noteCard.appendChild(actions)
+
+    notesGrid.appendChild(noteCard);
+
+
+
+  });
+
+
+  if(notes.length === 0){
+    emptyNotes.hidden = false;
+  }else{
+    emptyNotes.hidden = true;
+  }
 }

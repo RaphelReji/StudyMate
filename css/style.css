@@ -498,7 +498,21 @@ nav {
   margin-top: 15px;
 }
 
+#saveNoteButton{
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
 
+#cancelEditButton{
+  background: transparent;
+  color: #526b52;
+  border: 1px solid #829876;
+}
+
+.saved-notes-section{
+  margin-top: 35px;
+}
 
 .note-grid{
   display: grid;
