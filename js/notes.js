@@ -107,3 +107,68 @@ function renderNotes(){
     emptyNotes.hidden = true;
   }
 }
+
+
+// clearing function
+
+function clearEditor(){
+
+  noteTitle.value= "";
+  noteContent.value= "";
+
+  editingNoteld = null;
+
+  saveNoteButton.textContent = "Save";
+
+  cancelEditButton.hidden= true;
+  editingNoteld.textContent = "New";
+
+}
+
+
+// saving note
+
+
+function saveNote(){
+
+  const title = noteTitle.value.trim();
+  const content = noteContent.value.trim();
+
+  if ( title ==="" || content ===""){
+    alert("Pls enter both a title and your content");
+    return
+  }
+
+
+  if (editingNoteld !== null){
+    const noteToUpdate = notes.find(function(note){
+      return note.id === editingNoteld;
+    });
+
+    if (noteToUpdate){
+      noteToUpdate.title = title;
+      noteToUpdate.content = content;
+    }
+  }else{
+
+    const newNotes={
+      id: Date.now(),
+      title: title,
+      content:content
+    };
+
+    notes.unshift(newNotes);
+
+  }
+
+  saveNote();
+  renderNotes();
+  clearEditor();
+
+}
+
+
+saveNoteButton.addEventListener("click", saveNote);
+cancelEditButton.addEventListener("click", clearEditor);
+
+renderNotes();
