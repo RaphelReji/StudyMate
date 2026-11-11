@@ -28,61 +28,60 @@ function renderNotes(){
 
   notes.forEach(function(note){
 
-    const noteCard = document.createElement("article");
-    noteContent.className = "note-card";
+        const noteCard = document.createElement("article");
+                noteCard.className = "note-card";
 
-    const title = document.createElement("h3");
-    title.textContent = note.title;
+        const title = document.createElement("h3");
+        title.textContent = note.title;
 
-    const content = document.createElement("p");
-    content.textContent = note.content;
+        const content = document.createElement("p");
+        content.textContent = note.content;
 
-    const actions = document.createElement('div');
-    actions.className = "notes-card-actions";
+        const actions = document.createElement("div");
+        actions.className = "note-card-actions";
 
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.className = "note-edit-button";
 
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.className = "note-edit-button";
-
-
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.className = "note-delete-button";
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "note-delete-button";
 
 
-    editButton.addEventListener('click', function(){
+        editButton.addEventListener("click", function() {
 
-      noteTitle.value = note.title;
-      noteContent.value = note.content;
+            noteTitle.value = note.title;
+            noteContent.value = note.content;
 
-      editingNoteld = note.id;
+            editingNoteId = note.id;
 
-      saveNoteButton.textContent = "Update";
-      cancelEditButton.hidden = false;
-      editorLabel.textContent = "Edit";
+            saveNoteButton.textContent = "Update note";
+            cancelEditButton.hidden = false;
+            editorLabel.textContent = "EDIT YOUR NOTE";
 
-      noteTitle.focus();
-    });
+            noteTitle.focus();
+
+        });
 
 
     // deleting note
 
 
-    deleteButton.addEventListener("click", function(){
+         deleteButton.addEventListener("click", function() {
 
-      notes = notes.filter(function(item){
-        return item.id!== note.id;
-      });
+            notes = notes.filter(function(item) {
+                return item.id !== note.id;
+            });
 
-      saveNotes();
-      renderNotes();
+            saveNotes();
+            renderNotes();
 
-      if (editingNotel === note.id){
-        clearEditor();
-      }
+            if (editingNoteId === note.id) {
+                clearEditor();
+            }
 
-    });
+        });
 
     actions.appendChild(editButton)
     actions.appendChild(deleteButton)
@@ -116,12 +115,12 @@ function clearEditor(){
   noteTitle.value= "";
   noteContent.value= "";
 
-  editingNoteld = null;
+  editingNoteId = null;
 
   saveNoteButton.textContent = "Save";
 
   cancelEditButton.hidden= true;
-  editingNoteld.textContent = "New";
+  editingNoteId.textContent = "New";
 
 }
 
@@ -140,9 +139,9 @@ function saveNote(){
   }
 
 
-  if (editingNoteld !== null){
+  if (editingNoteId !== null){
     const noteToUpdate = notes.find(function(note){
-      return note.id === editingNoteld;
+      return note.id === editingNoteId;
     });
 
     if (noteToUpdate){
