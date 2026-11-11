@@ -208,3 +208,78 @@ if (menuToggle && sidebar && sidebarOverlay){
 });
 
 }
+
+
+// timer
+
+const timerDisplay = document.getElementById("timerDisplay");
+const startTimer = document.getElementById("startTimer");
+const pauseTimer = document.getElementById("pauseTimer");
+const resetTimer = document.getElementById("resetTimer");
+const timerStatus = document.getElementById("timerStatus");
+
+
+// display of time
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    timerDisplay.textContent =
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+}
+
+
+//start
+
+startTimer.addEventListener("click", function() {
+
+    if (timerInterval !== null) {
+        return;
+    }
+
+    timerStatus.textContent = "Focus on your work!";
+
+    timerInterval = setInterval(function() {
+
+        timeLeft--;
+
+        updateTimerDisplay();
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+
+            timerStatus.textContent =
+                "Session complete! Take a short break.";
+        }
+
+    }, 1000);
+});
+
+
+// Pause the timer
+pauseTimer.addEventListener("click", function() {
+
+    clearInterval(timerInterval);
+    timerInterval = null;
+
+    timerStatus.textContent = "Timer paused.";
+});
+
+// Reset the timer
+resetTimer.addEventListener("click", function() {
+
+    clearInterval(timerInterval);
+    timerInterval = null;
+
+    timeLeft = 25 * 60;
+
+    updateTimerDisplay();
+
+    timerStatus.textContent = "Ready when you are.";
+});
+
+
+updateTimerDisplay();
