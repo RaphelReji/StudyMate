@@ -72,6 +72,12 @@ button{
   transition: transform 0.25s ease;
 }
 
+.sidebar-img{
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .logo{
   color: #495a49;
   font-size: 27px;
@@ -543,7 +549,79 @@ nav {
     margin: 15px auto;
 }
 
+#startTimer{
+  border-radius: 5px;
+  background-color: var(--cornsilk);
+  border: 1px solid black;
+  color: #405640;
+}
 
+#startTimer:hover{
+  background-color: var(--papaya-whip);
+}
+
+.focus-section h2 span{
+  font-size: 30px;
+}
+
+
+#focus-plant-img{
+  width: 160px;
+  border-radius: 50%;
+  border: 2px dotted #405640;
+  margin-top: 20px;
+  animation: jump 3s infinite ease;
+}
+
+@keyframes jump {
+  
+  from{
+    transform: translateY(-10px);
+  }
+
+  to{
+    transform: translateY(10px);
+  }
+}
+
+
+
+
+.note-card-actions{
+  justify-content: space-between;
+}
+
+.note-edit-button{
+  margin-right: 10px;
+  font-weight: 500;
+  border: 2px groove #b9c5a0;
+}
+.note-edit-button:hover{
+  border-radius: 10px;
+}
+
+.note-delete-button{
+    border: 2px groove #b9c5a0;
+}
+
+.note-delete-button:hover{
+  border-radius: 10px;
+}
+
+
+#saveNoteButton{
+  color: #514638;
+  border: 2px groove #526b52;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
+#saveNoteButton:hover{
+  background-color: var(--papaya-whip);
+  border: 2px dashed #526b52;
+  border-radius: 20px;
+}
 
 /* for phone screens css*/
 
