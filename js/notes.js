@@ -12,7 +12,7 @@ const editorLabel = document.getElementById("editorLabel");
 
 let notes = JSON.parse(localStorage.getItem("studymateNotes")) || [];
 
-let editingNoteld = null;
+let editingNoteId = null;
 
 // SAVIING NOTE IN LS
 
@@ -120,7 +120,7 @@ function clearEditor(){
   saveNoteButton.textContent = "Save";
 
   cancelEditButton.hidden= true;
-  editingNoteId.textContent = "New";
+  editorLabel.textContent = "NEW NOTE";
 
 }
 
@@ -160,7 +160,7 @@ function saveNote(){
 
   }
 
-  saveNote();
+  saveNotes();
   renderNotes();
   clearEditor();
 
