@@ -15,6 +15,10 @@ if (greeting) {
     }
 }
 
+if(savedName){
+  greeting.textContent+="," + savedName;
+}
+
 if (dateElement) {
     const formattedDate = today.toLocaleDateString("en-IN", {
         weekday: "long",
@@ -290,3 +294,34 @@ resetTimer.addEventListener("click", function() {
 
 
 updateTimerDisplay();
+
+
+
+// welcome user name
+
+const welcomeOverlay = document.getElementById("welcomeOverlay");
+const createSpaceButton = document.getElementById("createSpaceButton");
+
+if(welcomeOverlay && createSpaceButton){
+  
+  const savedName = localStorage.getItem("studymateName");
+
+
+  if(!savedName){
+    welcomeOverlay.classList.add("show");
+  }
+
+  createSpaceButton.addEventListener("click", function(){
+
+    const name = document.getElementById("userName").value.trim();
+
+    if(name===""){
+      alert("please enter your name");
+      return;
+    }
+
+    localStorage.setItem("studymateName", name);
+
+    welcomeOverlay.classList.remove("show");
+  });
+};
