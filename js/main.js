@@ -1,26 +1,30 @@
+
 const dateElement = document.getElementById("todayDate");
+const greeting = document.getElementById("greeting");
 
 const today = new Date();
-
-const greeting = document.getElementById("greeting");
 const currentHour = today.getHours();
 
-if (currentHour < 12){
-  greeting.textContent = "Good morning";
-} else if ( currentHour < 17){
-  greeting.textContent= "Good afternoon"
-} else{
-  greeting.textContent = "Good Evening";
+if (greeting) {
+    if (currentHour < 12) {
+        greeting.textContent = "Good morning";
+    } else if (currentHour < 17) {
+        greeting.textContent = "Good afternoon";
+    } else {
+        greeting.textContent = "Good Evening";
+    }
 }
 
-const formattedDate = today.toLocaleDateString("en-IN",{
-  weekday:"long",
-  day:"numeric",
-  month:"long",
-  year:"numeric"
-});
+if (dateElement) {
+    const formattedDate = today.toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
 
-dateElement.textContent = formattedDate;
+    dateElement.textContent = formattedDate;
+}
 
 
 const timetable =[
