@@ -139,13 +139,17 @@ nav {
 }
 
 .date-box{
-  background-color: #fffaf4;
+  background-color:#705b4bcc;
+  color: #91bd32;
   border: 1px solid #d9c8b8;
   padding: 15px 20px;
   font-size: 13px;
   border-radius: 5px;
 }
-
+.date-box p{
+  color: #dfe9da;
+  font-size: 18px;
+}
 .left-page .welcome-box{
   background:transparent;
   border: none;
@@ -451,6 +455,11 @@ nav {
   cursor: pointer;
 }
 
+.menu-toggle:hover{
+  font-weight: bolder;
+  transform: scale(1.02);
+}
+
 
 /*notes page*/
 
@@ -692,8 +701,15 @@ nav {
   width: 100%;
   margin-top: 20px;
   padding: 10px;
-
+  background-color: #806e5b;
+  font-size: 16px;
+  border: 2px groove #526b52;
   cursor: pointer;
+}
+
+#createSpaceButton:hover{
+  background-color: #514638;
+  border-radius: 5px;
 }
 
 
