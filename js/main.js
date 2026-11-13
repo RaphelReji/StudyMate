@@ -102,11 +102,31 @@ if (timetableGrid){
 
     dayCard.appendChild(dayTitle);
 
-    day.subjects.forEach(function(subject){
+    day.subjects.forEach(function(subject, index){
 
       const subjectItem = document.createElement("div");
       subjectItem.className = "subject-item";
-      subjectItem.textContent = subject
+
+      const subjectText = document.createElement("span");
+      subjectText.textContent = subject;
+
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "x";
+      removeButton.className = "remove-subject-btn";
+
+      removeButton.addEventListener("click", function(){
+        day.subjects.splice(index, 1);
+
+        localStorage.setItem(
+          "studymateTimetable",
+          JSON.stringify(timetable)
+        );
+
+        subjectItem.remove();
+      });
+
+      subjectItem.appendChild(subjectText)
+      subjectItem.appendChild(removeButton)
 
       dayCard.appendChild(subjectItem)
 
@@ -126,6 +146,8 @@ if (timetableGrid){
         newSubject.textContent = subjectName.trim();
 
         day.subjects.push(subjectName.trim());
+
+        localStorage.setItem("studymateTimetable", JSON.stringify(timetable));
 
         dayCard.insertBefore(newSubject, addButton);
       }

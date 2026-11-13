@@ -698,6 +698,28 @@ nav {
 
 
 
+.subject-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.remove-subject-btn{
+  padding: 2px 8px;
+  background: transparent;
+  color: #405640;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: sans-serif;
+  border: 1px groove #405640;
+  border-radius: 10px;
+}
+
+.remove-subject-btn:hover{
+  background-color: #54775460;
+  color: var(--cornsilk);
+}
 
 
 
