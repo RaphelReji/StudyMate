@@ -776,7 +776,7 @@ nav {
   }
 
   nav{
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
@@ -793,10 +793,13 @@ nav {
   }
 
   .topbar{
-    align-items: flex-start;
+    align-items: first baseline;
     flex-direction: column;
     gap: 18px;
   }
+  .menu-toggle {
+    align-items: flex-start;
+}
 
   .topbar h1{
     font-size: 26px;
@@ -824,5 +827,17 @@ nav {
 
 .book-page {
     padding: 22px;
+}
+
+.right-page .timetable-grid {
+    grid-template-columns: repeat(2,minmax(0, 1fr));
+}
+
+.note-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.topbar h1 {
+    text-align: center;
 }
 }
