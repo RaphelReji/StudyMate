@@ -15,8 +15,10 @@ if (greeting) {
     }
 }
 
-if(savedName){
-  greeting.textContent+="," + savedName;
+const savedName = localStorage.getItem("studymateName");
+
+if(savedName && greeting){
+  greeting.textContent  += "," + savedName;
 }
 
 if (dateElement) {
@@ -61,6 +63,22 @@ const timetable =[
     subjects:[]
   }
 ]
+
+const savedTimetable= localStorage.getItem("studymateTimetable");
+
+if(savedTimetable){
+  const savedDays = JSON.parse(savedTimetable);
+
+  timetable.forEach(function(day){
+    const savedDay = savedDays.find(function(item){
+      return item.day == day.day;
+    });
+
+    if(savedDay){
+      day.subjects = savedDay.subjects;
+    }
+  })
+}
 
 const timetableGrid = document.getElementById("timetableGrid");
 
@@ -227,7 +245,10 @@ const resetTimer = document.getElementById("resetTimer");
 const timerStatus = document.getElementById("timerStatus");
 
 
-let timeLeft = 25 * 60;
+if(timerDisplay && startTimer && pauseTimer && resetTimer && timerStatus){
+
+
+  let timeLeft = 25 * 60;
 let  timerInterval = null;
 
 // display of time
@@ -292,8 +313,12 @@ resetTimer.addEventListener("click", function() {
     timerStatus.textContent = "Ready when you are.";
 });
 
-
 updateTimerDisplay();
+
+}
+
+
+
 
 
 
@@ -303,8 +328,6 @@ const welcomeOverlay = document.getElementById("welcomeOverlay");
 const createSpaceButton = document.getElementById("createSpaceButton");
 
 if(welcomeOverlay && createSpaceButton){
-  
-  const savedName = localStorage.getItem("studymateName");
 
 
   if(!savedName){
